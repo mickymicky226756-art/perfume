@@ -1671,7 +1671,7 @@
                     <div class="profile-list-chevron"><i class="fas fa-chevron-right"></i></div>
                 </div>
 
-                <div class="profile-list-item" onclick="switchPage('pageDownloadApp', document.querySelectorAll('.nav-link')[5])">
+                <div class="profile-list-item" onclick="downloadAndroidApp()">
                     <div class="profile-list-icon" style="background: linear-gradient(135deg,#0d0b06,#1e1800); color:#d4af37;">
                         <i class="fas fa-download"></i>
                     </div>
@@ -1700,140 +1700,131 @@
         </div>
 
         <div id="pageDownloadApp" class="page-section hidden">
-            <!-- Header -->
-            <div class="page-header" style="background: linear-gradient(135deg, #0d0b06, #1e1800); border-bottom: none;">
-                <i class="fas fa-arrow-left" style="color:#d4af37;" onclick="switchPage('pageMe', document.querySelectorAll('.nav-link')[5])"></i>
-                <h3 style="color:#d4af37; font-family:'Cormorant Garamond',serif; letter-spacing:2px; font-weight:500;">Download App</h3>
-            </div>
-
-            <!-- Hero section -->
-            <div style="background:linear-gradient(135deg,#0d0b06 0%,#1a1200 60%,#0d0900 100%);padding:40px 24px 36px;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid rgba(212,175,55,0.12);">
-                <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(212,175,55,0.18) 0%,transparent 65%);pointer-events:none;"></div>
-                <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(212,175,55,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,0.025) 1px,transparent 1px);background-size:35px 35px;pointer-events:none;"></div>
-                <!-- Animated ring -->
-                <div style="position:absolute;top:-80px;right:-80px;width:260px;height:260px;border:1px solid rgba(212,175,55,0.08);border-radius:50%;pointer-events:none;animation:ringRotate 20s linear infinite;"></div>
-                <!-- App icon -->
-                <div style="width:100px;height:100px;background:linear-gradient(135deg,rgba(212,175,55,0.18),rgba(212,175,55,0.05));border:1.5px solid rgba(212,175,55,0.4);border-radius:28px;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;box-shadow:0 0 50px rgba(212,175,55,0.2),0 10px 30px rgba(0,0,0,0.5);position:relative;z-index:1;">
-                    <i class="fas fa-gem" style="font-size:2.6em;color:#d4af37;"></i>
+            <!-- Modern Hero Header -->
+            <div style="background:linear-gradient(160deg,#0d0b06 0%,#1e1800 50%,#0d0b06 100%);padding:0;position:relative;overflow:hidden;min-height:220px;display:flex;flex-direction:column;justify-content:flex-end;">
+                <!-- Animated background rings -->
+                <div style="position:absolute;top:-60px;right:-60px;width:220px;height:220px;border:1px solid rgba(212,175,55,0.12);border-radius:50%;pointer-events:none;"></div>
+                <div style="position:absolute;top:-30px;right:-30px;width:140px;height:140px;border:1px solid rgba(212,175,55,0.08);border-radius:50%;pointer-events:none;"></div>
+                <div style="position:absolute;bottom:-80px;left:-80px;width:250px;height:250px;border:1px solid rgba(212,175,55,0.06);border-radius:50%;pointer-events:none;"></div>
+                <!-- Grid overlay -->
+                <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(212,175,55,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(212,175,55,0.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;"></div>
+                <!-- Gold glow -->
+                <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 70% 30%,rgba(212,175,55,0.15) 0%,transparent 60%);pointer-events:none;"></div>
+                <!-- Back button -->
+                <div style="position:absolute;top:18px;left:18px;z-index:10;">
+                    <div onclick="switchPage('pageMe', document.querySelectorAll('.nav-link')[5])" style="width:40px;height:40px;background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.25);border-radius:12px;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+                        <i class="fas fa-arrow-left" style="color:#d4af37;font-size:0.9em;"></i>
+                    </div>
                 </div>
-                <div style="font-size:0.62em;letter-spacing:5px;color:rgba(212,175,55,0.65);text-transform:uppercase;font-weight:700;margin-bottom:8px;position:relative;z-index:1;">Official Application</div>
-                <h2 style="color:#ffffff;font-family:'Cormorant Garamond',serif;font-size:2em;font-weight:500;letter-spacing:3px;margin-bottom:8px;position:relative;z-index:1;">Chanel Luxury</h2>
-                <div style="width:45px;height:1px;background:linear-gradient(90deg,transparent,#d4af37,transparent);margin:0 auto 12px;position:relative;z-index:1;"></div>
-                <p style="color:rgba(255,255,255,0.45);font-size:0.82em;position:relative;z-index:1;max-width:260px;margin:0 auto;line-height:1.6;">Download the official app directly to your device for the best investment experience.</p>
-                <!-- Stats row -->
-                <div style="display:flex;gap:0;margin-top:24px;background:rgba(255,255,255,0.04);border:1px solid rgba(212,175,55,0.12);border-radius:14px;overflow:hidden;position:relative;z-index:1;">
-                    <div style="flex:1;padding:12px 8px;text-align:center;border-right:1px solid rgba(212,175,55,0.08);">
-                        <div style="font-size:1.1em;font-weight:900;color:#d4af37;">100%</div>
-                        <div style="font-size:0.6em;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-top:2px;">Safe</div>
+                <!-- Hero content -->
+                <div style="padding:20px 24px 32px;position:relative;z-index:2;">
+                    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(212,175,55,0.12);border:1px solid rgba(212,175,55,0.25);border-radius:20px;padding:5px 14px;margin-bottom:14px;">
+                        <span style="width:7px;height:7px;background:#d4af37;border-radius:50%;display:inline-block;box-shadow:0 0 8px rgba(212,175,55,0.8);"></span>
+                        <span style="font-size:0.62em;color:#d4af37;font-weight:700;letter-spacing:2px;text-transform:uppercase;">Official App</span>
                     </div>
-                    <div style="flex:1;padding:12px 8px;text-align:center;border-right:1px solid rgba(212,175,55,0.08);">
-                        <div style="font-size:1.1em;font-weight:900;color:#d4af37;">Free</div>
-                        <div style="font-size:0.6em;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-top:2px;">Always</div>
-                    </div>
-                    <div style="flex:1;padding:12px 8px;text-align:center;">
-                        <div style="font-size:1.1em;font-weight:900;color:#d4af37;">v2.0</div>
-                        <div style="font-size:0.6em;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-top:2px;">Latest</div>
-                    </div>
+                    <h2 style="color:#ffffff;font-family:'Cormorant Garamond',serif;font-size:2em;font-weight:600;letter-spacing:2px;margin:0 0 6px;">Chanel Luxury</h2>
+                    <p style="font-size:0.72em;color:rgba(255,255,255,0.45);margin:0;letter-spacing:1px;font-weight:500;">Investments Platform — Android</p>
                 </div>
             </div>
 
-            <!-- Download section -->
-            <div style="padding:24px 20px;display:flex;flex-direction:column;gap:16px;">
+            <!-- App Info Card -->
+            <div style="padding:24px 20px 0;margin-top:-1px;">
 
-                <!-- Android Download Card -->
-                <div style="background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.05);">
-                    <div style="background:linear-gradient(135deg,#1a3c1a,#22501f);padding:16px 20px;display:flex;align-items:center;gap:12px;">
-                        <div style="width:44px;height:44px;background:rgba(74,222,128,0.15);border:1px solid rgba(74,222,128,0.3);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                            <i class="fab fa-android" style="color:#4ade80;font-size:1.4em;"></i>
+                <!-- App Preview Card -->
+                <div style="background:#fff;border-radius:24px;box-shadow:0 8px 30px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.05);overflow:hidden;margin-bottom:20px;">
+                    <div style="background:linear-gradient(135deg,#0d0b06,#1e1800);padding:20px;display:flex;align-items:center;gap:16px;">
+                        <div style="width:64px;height:64px;background:linear-gradient(135deg,#d4af37,#c9a227);border-radius:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 8px 20px rgba(212,175,55,0.35);">
+                            <i class="fas fa-gem" style="color:#000;font-size:1.6em;"></i>
                         </div>
-                        <div>
-                            <div style="font-size:0.58em;letter-spacing:3px;color:rgba(74,222,128,0.6);text-transform:uppercase;font-weight:700;">For Android</div>
-                            <div style="color:#fff;font-weight:800;font-size:0.95em;">Android APK</div>
+                        <div style="flex:1;">
+                            <div style="font-size:1em;font-weight:900;color:#fff;margin-bottom:3px;font-family:'Montserrat',sans-serif;">Chanel Luxury</div>
+                            <div style="font-size:0.7em;color:rgba(212,175,55,0.7);font-weight:600;letter-spacing:0.5px;">Investments Platform</div>
+                            <div style="display:flex;align-items:center;gap:6px;margin-top:6px;">
+                                <div style="display:flex;gap:2px;">
+                                    <i class="fas fa-star" style="color:#d4af37;font-size:0.7em;"></i>
+                                    <i class="fas fa-star" style="color:#d4af37;font-size:0.7em;"></i>
+                                    <i class="fas fa-star" style="color:#d4af37;font-size:0.7em;"></i>
+                                    <i class="fas fa-star" style="color:#d4af37;font-size:0.7em;"></i>
+                                    <i class="fas fa-star" style="color:#d4af37;font-size:0.7em;"></i>
+                                </div>
+                                <span style="font-size:0.65em;color:rgba(255,255,255,0.5);font-weight:600;">5.0 • Android</span>
+                            </div>
                         </div>
-                        <div style="margin-left:auto;background:rgba(74,222,128,0.15);border:1px solid rgba(74,222,128,0.25);padding:4px 12px;border-radius:20px;">
-                            <span style="font-size:0.62em;color:#4ade80;font-weight:800;text-transform:uppercase;letter-spacing:1px;">Available</span>
+                        <div style="background:rgba(212,175,55,0.1);border:1px solid rgba(212,175,55,0.2);border-radius:12px;padding:8px 14px;text-align:center;">
+                            <div style="font-size:0.6em;color:rgba(212,175,55,0.7);font-weight:700;text-transform:uppercase;letter-spacing:1px;">FREE</div>
                         </div>
                     </div>
-                    <div style="height:2px;background:linear-gradient(90deg,transparent,rgba(74,222,128,0.5),transparent);"></div>
-                    <div style="padding:18px 20px;">
-                        <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
-                            <span style="background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.2);color:#16a34a;font-size:0.68em;font-weight:700;padding:4px 10px;border-radius:20px;"><i class="fas fa-shield-halved" style="margin-right:4px;"></i>Verified Safe</span>
-                            <span style="background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);color:#2563eb;font-size:0.68em;font-weight:700;padding:4px 10px;border-radius:20px;"><i class="fas fa-mobile-screen" style="margin-right:4px;"></i>Android 6.0+</span>
-                            <span style="background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.2);color:#c9a227;font-size:0.68em;font-weight:700;padding:4px 10px;border-radius:20px;"><i class="fas fa-file" style="margin-right:4px;"></i>APK File</span>
+
+                    <!-- Features list -->
+                    <div style="padding:20px;">
+                        <div style="font-size:0.68em;color:#94a3b8;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;">What's Included</div>
+                        <div style="display:flex;flex-direction:column;gap:12px;">
+                            <div style="display:flex;align-items:center;gap:12px;">
+                                <div style="width:34px;height:34px;background:linear-gradient(135deg,#fef9ec,#fff3cc);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(212,175,55,0.2);">
+                                    <i class="fas fa-chart-line" style="color:#c9a227;font-size:0.85em;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size:0.85em;font-weight:800;color:#111;margin-bottom:1px;">Live Investment Tracking</div>
+                                    <div style="font-size:0.7em;color:#94a3b8;font-weight:500;">Monitor earnings in real-time</div>
+                                </div>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:12px;">
+                                <div style="width:34px;height:34px;background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(22,163,74,0.15);">
+                                    <i class="fas fa-wallet" style="color:#16a34a;font-size:0.85em;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size:0.85em;font-weight:800;color:#111;margin-bottom:1px;">Instant Deposits & Withdrawals</div>
+                                    <div style="font-size:0.7em;color:#94a3b8;font-weight:500;">Fast & secure transactions</div>
+                                </div>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:12px;">
+                                <div style="width:34px;height:34px;background:linear-gradient(135deg,#eff6ff,#dbeafe);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(37,99,235,0.15);">
+                                    <i class="fas fa-users" style="color:#2563eb;font-size:0.85em;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size:0.85em;font-weight:800;color:#111;margin-bottom:1px;">Referral & Team Rewards</div>
+                                    <div style="font-size:0.7em;color:#94a3b8;font-weight:500;">Earn from your network</div>
+                                </div>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:12px;">
+                                <div style="width:34px;height:34px;background:linear-gradient(135deg,#fdf4ff,#fae8ff);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(168,85,247,0.15);">
+                                    <i class="fas fa-bell" style="color:#9333ea;font-size:0.85em;"></i>
+                                </div>
+                                <div>
+                                    <div style="font-size:0.85em;font-weight:800;color:#111;margin-bottom:1px;">Smart Notifications</div>
+                                    <div style="font-size:0.7em;color:#94a3b8;font-weight:500;">Never miss an opportunity</div>
+                                </div>
+                            </div>
                         </div>
-                        <p style="font-size:0.82em;color:#475569;line-height:1.7;margin:0 0 16px;">Tap the button below to download the Chanel Luxury app APK file directly to your Android device's internal storage. After downloading, open the file to install.</p>
-                        <button onclick="downloadAndroidApp()" style="width:100%;padding:17px;background:linear-gradient(135deg,#15803d,#16a34a);color:#fff;border:none;border-radius:16px;font-weight:800;font-size:0.95em;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 8px 20px rgba(22,163,74,0.3);transition:all 0.3s;font-family:'Montserrat',sans-serif;letter-spacing:0.5px;">
-                            <i class="fab fa-android" style="font-size:1.2em;"></i> Download for Android
-                        </button>
                     </div>
                 </div>
 
-                <!-- iOS / iPhone Download Card -->
-                <div style="background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.05);">
-                    <div style="background:linear-gradient(135deg,#0a1628,#1c2a4a);padding:16px 20px;display:flex;align-items:center;gap:12px;">
-                        <div style="width:44px;height:44px;background:rgba(147,197,253,0.15);border:1px solid rgba(147,197,253,0.3);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                            <i class="fab fa-apple" style="color:#93c5fd;font-size:1.4em;"></i>
-                        </div>
-                        <div>
-                            <div style="font-size:0.58em;letter-spacing:3px;color:rgba(147,197,253,0.6);text-transform:uppercase;font-weight:700;">For iPhone / iPad</div>
-                            <div style="color:#fff;font-weight:800;font-size:0.95em;">iOS — Add to Home Screen</div>
-                        </div>
+                <!-- Install note -->
+                <div style="background:linear-gradient(135deg,#fff9ec,#fff3d0);border:1px solid rgba(212,175,55,0.2);border-radius:18px;padding:16px 18px;margin-bottom:24px;display:flex;align-items:flex-start;gap:12px;">
+                    <div style="width:32px;height:32px;background:rgba(212,175,55,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;">
+                        <i class="fas fa-shield-halved" style="color:#c9a227;font-size:0.9em;"></i>
                     </div>
-                    <div style="height:2px;background:linear-gradient(90deg,transparent,rgba(147,197,253,0.5),transparent);"></div>
-                    <div style="padding:18px 20px;">
-                        <p style="font-size:0.82em;color:#475569;line-height:1.7;margin:0 0 14px;">On iPhone & iPad, install the app by adding it to your Home Screen. Follow the 4 easy steps below:</p>
-                        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:16px;">
-                            <div style="display:flex;align-items:flex-start;gap:10px;">
-                                <span style="background:#0a1628;color:#93c5fd;font-weight:900;font-size:0.72em;padding:3px 8px;border-radius:10px;flex-shrink:0;margin-top:1px;min-width:22px;text-align:center;">1</span>
-                                <span style="font-size:0.8em;color:#374151;line-height:1.6;">Open this website in <strong>Safari</strong> browser</span>
-                            </div>
-                            <div style="display:flex;align-items:flex-start;gap:10px;">
-                                <span style="background:#0a1628;color:#93c5fd;font-weight:900;font-size:0.72em;padding:3px 8px;border-radius:10px;flex-shrink:0;margin-top:1px;min-width:22px;text-align:center;">2</span>
-                                <span style="font-size:0.8em;color:#374151;line-height:1.6;">Tap the <strong>Share</strong> icon <i class="fas fa-arrow-up-from-bracket" style="color:#007aff;"></i> at the bottom</span>
-                            </div>
-                            <div style="display:flex;align-items:flex-start;gap:10px;">
-                                <span style="background:#0a1628;color:#93c5fd;font-weight:900;font-size:0.72em;padding:3px 8px;border-radius:10px;flex-shrink:0;margin-top:1px;min-width:22px;text-align:center;">3</span>
-                                <span style="font-size:0.8em;color:#374151;line-height:1.6;">Scroll and tap <strong>"Add to Home Screen"</strong></span>
-                            </div>
-                            <div style="display:flex;align-items:flex-start;gap:10px;">
-                                <span style="background:#0a1628;color:#93c5fd;font-weight:900;font-size:0.72em;padding:3px 8px;border-radius:10px;flex-shrink:0;margin-top:1px;min-width:22px;text-align:center;">4</span>
-                                <span style="font-size:0.8em;color:#374151;line-height:1.6;">Tap <strong>"Add"</strong> — the app icon appears on your Home Screen!</span>
-                            </div>
-                        </div>
-                        <button onclick="installApp()" id="installAppBtn" style="width:100%;padding:17px;background:linear-gradient(135deg,#0a1628,#1c2a4a);color:#93c5fd;border:none;border-radius:16px;font-weight:800;font-size:0.95em;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 8px 20px rgba(10,22,40,0.25);transition:all 0.3s;font-family:'Montserrat',sans-serif;letter-spacing:0.5px;border:1px solid rgba(147,197,253,0.25);">
-                            <i class="fab fa-apple" style="font-size:1.2em;"></i> Add to Home Screen (iOS)
-                        </button>
+                    <div>
+                        <div style="font-size:0.8em;font-weight:800;color:#92400e;margin-bottom:3px;">Installation Note</div>
+                        <div style="font-size:0.7em;color:#78350f;line-height:1.6;">After downloading, go to <strong>Settings → Security</strong> and enable <strong>"Install from Unknown Sources"</strong> to install the APK.</div>
                     </div>
                 </div>
 
-                <!-- PC / Desktop Download Card -->
-                <div style="background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.05);">
-                    <div style="background:linear-gradient(135deg,#1a0d2e,#2d1b4e);padding:16px 20px;display:flex;align-items:center;gap:12px;">
-                        <div style="width:44px;height:44px;background:rgba(196,181,253,0.15);border:1px solid rgba(196,181,253,0.3);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                            <i class="fas fa-desktop" style="color:#c4b5fd;font-size:1.2em;"></i>
-                        </div>
-                        <div>
-                            <div style="font-size:0.58em;letter-spacing:3px;color:rgba(196,181,253,0.6);text-transform:uppercase;font-weight:700;">For Computer</div>
-                            <div style="color:#fff;font-weight:800;font-size:0.95em;">Windows / Mac — PC</div>
-                        </div>
-                    </div>
-                    <div style="height:2px;background:linear-gradient(90deg,transparent,rgba(196,181,253,0.5),transparent);"></div>
-                    <div style="padding:18px 20px;">
-                        <p style="font-size:0.82em;color:#475569;line-height:1.7;margin:0 0 14px;">Access the full Chanel Luxury platform on your PC or Mac by downloading the desktop file below. No installation required — just open and run.</p>
-                        <button onclick="downloadPCApp()" style="width:100%;padding:17px;background:linear-gradient(135deg,#4c1d95,#6d28d9);color:#fff;border:none;border-radius:16px;font-weight:800;font-size:0.95em;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 8px 20px rgba(109,40,217,0.3);transition:all 0.3s;font-family:'Montserrat',sans-serif;letter-spacing:0.5px;">
-                            <i class="fas fa-desktop" style="font-size:1.1em;"></i> Download for PC / Desktop
-                        </button>
-                    </div>
-                </div>
+                <!-- Download Button -->
+                <button onclick="downloadAndroidApp()" style="width:100%;padding:20px;background:linear-gradient(135deg,#c9a227,#d4af37,#b8902a);color:#000;border:none;border-radius:20px;font-weight:900;font-size:1em;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:12px;box-shadow:0 12px 30px rgba(212,175,55,0.45),0 4px 10px rgba(0,0,0,0.15);transition:all 0.3s;font-family:'Montserrat',sans-serif;letter-spacing:1px;position:relative;overflow:hidden;margin-bottom:14px;">
+                    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.15),transparent);pointer-events:none;"></div>
+                    <i class="fas fa-download" style="font-size:1.2em;"></i>
+                    <span>Download for Android</span>
+                </button>
 
-                <!-- Info note -->
-                <div style="background:linear-gradient(135deg,rgba(212,175,55,0.06),rgba(212,175,55,0.02));border:1px solid rgba(212,175,55,0.18);border-radius:16px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;margin-top:4px;">
-                    <i class="fas fa-circle-info" style="color:#d4af37;font-size:1em;flex-shrink:0;margin-top:2px;"></i>
-                    <div style="font-size:0.78em;color:#475569;line-height:1.65;">The downloaded file will be saved directly to your device's <strong>internal storage / Downloads folder</strong>. For Android, make sure to allow <strong>"Install from Unknown Sources"</strong> in your phone settings before opening the APK.</div>
+                <!-- File info -->
+                <div style="display:flex;justify-content:center;align-items:center;gap:6px;padding-bottom:30px;">
+                    <i class="fas fa-file-apk" style="color:#94a3b8;font-size:0.75em;"></i>
+                    <span style="font-size:0.7em;color:#94a3b8;font-weight:600;">hr.apk • Android 5.0+</span>
                 </div>
-
             </div>
         </div>
+
 
         <div id="pageBank" class="page-section hidden">
             <!-- Modern Bank Header -->
