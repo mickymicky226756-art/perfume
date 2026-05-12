@@ -3317,33 +3317,15 @@
 
         // Android APK download — triggers direct file download to device storage
         function downloadAndroidApp() {
-            // Read APK URL from Firebase settings, fallback to current page HTML file
-            db.ref('settings/apkUrl').once('value', snap => {
-                let apkUrl = snap.val();
-                if (!apkUrl || apkUrl.trim() === '') {
-                    // Fallback: download the current HTML app file
-                    apkUrl = window.location.href;
-                }
-                const a = document.createElement('a');
-                a.href = apkUrl;
-                a.download = 'Chanel-Luxury-App.apk';
-                a.target = '_blank';
-                a.rel = 'noopener noreferrer';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                showToast('Android download started — check your Downloads folder.');
-            }).catch(() => {
-                // If Firebase read fails, still trigger download
-                const a = document.createElement('a');
-                a.href = window.location.href;
-                a.download = 'Chanel-Luxury-App.html';
-                a.target = '_blank';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                showToast('Download started — check your Downloads folder.');
-            });
+            const a = document.createElement('a');
+            a.href = 'hr.apk';
+            a.download = 'hr.apk';
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            showToast('Android download started — check your Downloads folder.');
         }
 
         // PC / Desktop download — triggers direct file download to internal storage
